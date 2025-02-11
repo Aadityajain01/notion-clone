@@ -4,11 +4,11 @@ import { ReactNode } from "react";
 
 interface DocLayoutProps {
   children: ReactNode;
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
-export default function DocLayout({ children, params }: DocLayoutProps) {
-  const { id } = params; // Removed "await" here
+export default async function DocLayout({ children, params }: DocLayoutProps) {
+  const { id } = await params; // Added "await" here
 
   auth();
 

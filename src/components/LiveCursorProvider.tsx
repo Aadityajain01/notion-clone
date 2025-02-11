@@ -30,8 +30,8 @@ export default function LiveCursorProvider({
           <FollowPointer
             key={connectionId}
             info={info}
-            x = {presence.cursor.x}
-            y = {presence.cursor.y}
+            x = {presence.cursor?.x ?? 0}
+            y = {presence.cursor?.y ?? 0}
           ></FollowPointer>
 
         ))}
